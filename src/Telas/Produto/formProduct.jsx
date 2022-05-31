@@ -1,7 +1,20 @@
 import React from 'react'
 import { Container, Typography, Button } from '@mui/material';
 
-const formProduct = () => {
+const formProduct = ({setInputText, products, setProducts, inputText}) => {
+
+  const inputTextHandler = (e) => {
+    console.log(e.target.value);
+    setInputText(e.target.value)
+  };
+  const submitProductHandler = (e) => {
+    e.preventDefault();
+    setProducts([
+      ...products, { text: inputText, completed: false, id: Math.random() * 1000 }
+    ]);
+    setInputText('');
+  }
+
   return (
     <div className="container_principal">
      {/* logo */}
@@ -21,13 +34,17 @@ const formProduct = () => {
       </Container>
       {/* campo de formulário */}
           <form className="search_form">
-            <input
+        <input
+              value={inputText}
+              onChange={inputTextHandler}
               type="text"
               placeholder="insira um alimento"
               className="input_produto"
              
             />
-            <Button variant="contained" color="primary">
+        <Button
+          onClick={submitProductHandler}
+          variant="contained" color="primary">
               adicionar
             </Button>
             {/* filtro */}
