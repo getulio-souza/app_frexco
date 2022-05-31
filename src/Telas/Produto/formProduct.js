@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Typography, Button } from '@mui/material';
+import ProductList from './listProduct';
 
 const formProduct = ({setInputText, products, setProducts, inputText}) => {
 
@@ -12,8 +13,8 @@ const formProduct = ({setInputText, products, setProducts, inputText}) => {
     setProducts([
       ...products, { text: inputText, completed: false, id: Math.random() * 1000 }
     ]);
-    setInputText('');
-  }
+    setInputText("");
+  };
 
   return (
     <div className="container_principal">
@@ -46,16 +47,8 @@ const formProduct = ({setInputText, products, setProducts, inputText}) => {
           onClick={submitProductHandler}
           variant="contained" color="primary">
               adicionar
-            </Button>
-            {/* filtro */}
-            <div className="select">
-              <select name="products" className="filter-product">
-                <option value="all">Todos</option>
-                <option value="all">Adicionados</option>
-                <option value="all">Removidos</option>
-              </select>
-            </div>
-          </form>
+        </Button>
+      </form>
           </div>
   )
 }

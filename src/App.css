@@ -1,6 +1,10 @@
 body{
-  background-image: url(./img/tropical-fruits-summer-banner-background-bananas-oranges-grapefruits-colored-green-background_90380-.png);
-  background-repeat: no-repeat;
+  background-image: url(./img/fruits-3.jpg);
+  height: 100vh; 
+  width: 100vw;
+  /* background-repeat: no-repeat; */
+  /* object-fit: cover; */
+  /* background-position: center; */
 }
 
 li{
@@ -14,7 +18,7 @@ li{
 
 .title{
   font-weight: 700;
-  color: #000;
+  color: rgb(0, 84, 0);
   margin: 0 20px;
 }
 
@@ -34,16 +38,7 @@ li{
   width: 200px;
   padding: 9px 0;
   margin-bottom: 10px;
-}
-
-.campo_alimento{
-  text-align: start;
-  padding-left: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #89bd23;
-  margin: 10px 0;
+  padding-left: 5px ;
 }
 
 .search_form{
@@ -54,3 +49,31 @@ li{
   margin: 0 10px;
 }
 
+/* List product */
+
+.product{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.product_item{
+  background-color: #fff;
+  padding: 5px 10px;
+  min-width: 200px;
+  text-align: start;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.check_btn{
+  color: #fff;
+}
+.check_btn, .delete_btn{
+  cursor: pointer;
+  transition: .5s;
+}
+
+.delete_btn:hover{
+  opacity: 0.7;
+}
