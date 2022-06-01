@@ -3,7 +3,6 @@ import Product from "./Product";
 
 const ProductList = ({ products, setProducts, setEditProduct }) => {
   return (
-    <div className="product_container">
       <div className="product_list">
         {products.map((product) => (
           <Product
@@ -12,11 +11,10 @@ const ProductList = ({ products, setProducts, setEditProduct }) => {
             key={product.id}
             product={product}
             text={product.text}
-            
+            setEditProduct={setEditProduct}
           />
         ))}
       </div>
-    </div>
   );
 };
 

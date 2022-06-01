@@ -1,19 +1,44 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Container, Typography, Button } from '@mui/material';
-import ProductList from './listProduct';
+import {} from ""
 
-const formProduct = ({setInputText, products, setProducts, inputText}) => {
+const formProduct = ({setInputText, products, setProducts, inputText, editProduct, setEditProduct}) => {
+
+  //update product - (falta configurar o editar produto)
+  const updateProduct = (text, id, completed) => {
+    const newProduct = products.map((product) => {
+      product.id === id ? { text, id, completed } : product
+    })
+    setProducts(newProduct);
+    setEditProduct("");
+  };
+
+
+  useEffect(() => {
+    if (editProduct) {
+      setInputText(editProduct.text);
+    }
+    else {
+      setInputText("");
+    }
+  }, [setInputText, editProduct]);
+
 
   const inputTextHandler = (e) => {
-    console.log(e.target.value);
     setInputText(e.target.value)
   };
+
   const submitProductHandler = (e) => {
     e.preventDefault();
-    setProducts([
-      ...products, { text: inputText, completed: false, id: Math.random() * 1000 }
-    ]);
-    setInputText("");
+    if (!editProduct) {
+      setProducts([
+        ...products, { text: inputText, completed: false, id: Math.random() * 1000 }
+      ]);
+      setInputText("");
+    }
+    else {
+      updateProduct(input, editProduct.id, editProduct.completed)
+    }
   };
 
   return (
@@ -42,14 +67,17 @@ const formProduct = ({setInputText, products, setProducts, inputText}) => {
               placeholder="insira um alimento"
               className="input_produto"
              
-            />
+        />
+        <div className='two_btns'>
         <Button
           onClick={submitProductHandler}
           variant="contained" color="primary">
-              adicionar
+              adicionar produto
         </Button>
+        <Button variant="contained" color="secondary">Conferir estoque</Button>
+            </div>
       </form>
-          </div>
+    </div>
   )
 }
 

@@ -21,15 +21,20 @@ const Product = ({ text, product, products, setProducts, setEditProduct }) => {
             return item;
         }))
   }
+
   //editando alimentos 
+  const editHandler = () => {
+    const findProduct = products.find((product) => product.id === id);
+    setEditProduct(findProduct);
+  }
 
   return (
     <section className="product">
-      {/* <li className={`product_item ${product.completed ? "completed" : "" }`}>{text}</li>
+      <li className={`product_item ${product.completed ? "completed" : "" }`}>{text}</li>
       <div onClick={completeHandler} className="check_btn">
         <CheckIcon />
-      </div> */}
-      <div className="edit_btn" onClick={()=> handleEdit(product)}>
+      </div>
+      <div className="edit_btn" onClick={editHandler}>
         <EditIcon color="primary" />
       </div>
       <div className="delete_btn" onClick={deleteHandler}>
