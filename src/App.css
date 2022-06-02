@@ -14,12 +14,16 @@ li{
 .logo{
   margin: 20px 0;
   text-align: center;
+  /* box-shadow: 5px 3px 5px 3px #000; */
 }
 
 .title{
   font-weight: 700;
-  color: #fff;
-  margin: 0 20px;
+  text-shadow: 1px 2px 5px #000;
+  padding: 5px;
+  border-radius: 10px;
+  color: rgb(250, 250, 250);
+  margin: 10px 20px;
 }
 
 .container_principal{
@@ -79,3 +83,51 @@ li{
   text-align: center;
   margin-top: 20px;
 }
+
+
+/*
+====================
+Estoque 
+====================
+*/
+
+.estoque_container{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.background_input{
+  width: 220px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+
+.estoque_title{
+  text-shadow: 1px 2px 5px #000;
+}
+
+.alimento_text{
+  color: red;
+}
+
+h4{
+  color: #fff;
+  text-shadow: 1px 2px 5px #000;
+  font-size: 20px;
+}
+
+.btn_action{
+  margin-top: 30px;
+}
+
+/*
+====================
+Tabela  
+====================
+*/
+
+
