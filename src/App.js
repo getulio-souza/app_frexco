@@ -4,6 +4,7 @@ import Form from "./Telas/Produto/formProduct";
 import ProductList from "./Telas/Produto/listProduct";
 import { Container } from "@mui/material";
 import EstoqueProdutos from "./Telas/Estoque/EstoqueProdutos.js";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 
 function App() {
@@ -20,12 +21,12 @@ function App() {
         setInputText={setInputText}
         editProduct={editProduct}
         setEditProduct ={setEditProduct}
-      />
+        />
       <ProductList
         setProducts={setProducts}
         products={products}
         setEditProduct={setEditProduct}
-      />
+        />
       <EstoqueProdutos/>
     </Container>
   );
