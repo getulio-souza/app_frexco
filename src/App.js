@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Container>
-      {/* <Form
+      <Form
         inputText={inputText}
         products={products}
         setProducts={setProducts}
@@ -25,7 +25,7 @@ function App() {
         setProducts={setProducts}
         products={products}
         setEditProduct={setEditProduct}
-      /> */}
+      />
       <EstoqueProdutos/>
     </Container>
   );

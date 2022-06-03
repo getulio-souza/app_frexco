@@ -75,15 +75,16 @@ const formProduct = ({
               variant="contained"
               color="primary"
             >
-              adicionar produto
+              adicionar alimento
             </Button>
             <Button
-              className="btn_estoque"
+              className="btn_produto"
               variant="contained"
               color="secondary"
             >
-              <Link exact to="/Telas/Estoque/estoqueProdutos">Conferir estoque</Link>
+              Conferir estoque
             </Button>
+
           </div>
         </form>
       </div>
